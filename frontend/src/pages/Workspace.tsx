@@ -15,7 +15,8 @@ import {
   Bot,
   User,
   LogOut,
-  ChevronLeft
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { api } from '../services/api';
 
@@ -52,6 +53,7 @@ export default function Workspace() {
   const defaultTab = (searchParams.get('tab') as 'chat' | 'documents' | 'search') || 'chat';
   const [activeTab, setActiveTab] = useState<'chat' | 'documents' | 'search'>(defaultTab);
   const [activeWorkspaceId, setActiveWorkspaceId] = useState<string>('00000000-0000-0000-0000-000000000001');
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   // Chat state
   const [messages, setMessages] = useState<Message[]>([
@@ -189,80 +191,111 @@ export default function Workspace() {
 
   return (
     <div className="flex h-screen bg-[#0e131f] text-[#dde2f3] overflow-hidden font-sans selection:bg-sky-500 selection:text-white">
-      {/* Sidebar */}
-      <aside className="w-72 bg-[#080e1a]/90 border-r border-white/5 flex flex-col justify-between backdrop-blur-xl">
+      {/* Collapsible / Non-Collapsible Sidebar */}
+      <aside
+        className={`${
+          isSidebarCollapsed ? 'w-20' : 'w-72'
+        } transition-all duration-300 ease-in-out bg-[#080e1a]/95 border-r border-white/5 flex flex-col justify-between backdrop-blur-xl relative z-30 shrink-0`}
+      >
         <div>
-          {/* Logo */}
-          <div className="p-6 border-b border-white/5 flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-sky-500/20">
+          {/* Logo & Toggle Header */}
+          <div className={`p-4 border-b border-white/5 flex items-center ${isSidebarCollapsed ? 'justify-center flex-col gap-3' : 'justify-between'}`}>
+            <div className="flex items-center space-x-3 overflow-hidden">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-sky-500/20 shrink-0">
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
-              <div>
-                <h1 className="font-bold text-base text-white tracking-tight">AskItAll</h1>
-                <span className="text-[10px] font-mono text-sky-400 font-semibold uppercase">Intelligence Core</span>
-              </div>
+              {!isSidebarCollapsed && (
+                <div className="overflow-hidden">
+                  <h1 className="font-bold text-base text-white tracking-tight leading-tight truncate">AskItAll</h1>
+                  <span className="text-[10px] font-mono text-sky-400 font-semibold uppercase block">Intelligence Core</span>
+                </div>
+              )}
             </div>
-            <Link to="/dashboard" title="Back to Dashboard" className="text-slate-400 hover:text-white p-1 rounded hover:bg-white/5">
-              <ChevronLeft className="w-4 h-4" />
-            </Link>
+
+            <div className="flex items-center gap-1">
+              {!isSidebarCollapsed && (
+                <Link to="/dashboard" title="Back to Dashboard" className="text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-white/5 border border-white/5 transition-colors">
+                  <ChevronLeft className="w-4 h-4" />
+                </Link>
+              )}
+              <button
+                onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
+                title={isSidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+                className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 border border-white/5 transition-colors cursor-pointer"
+              >
+                {isSidebarCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
+              </button>
+            </div>
           </div>
 
           {/* Navigation */}
-          <nav className="p-4 space-y-1.5">
+          <nav className="p-3 space-y-1.5">
             <button
               onClick={() => setActiveTab('chat')}
-              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-xs font-medium transition-all ${
+              title={isSidebarCollapsed ? 'Grounded Chat' : undefined}
+              className={`w-full flex items-center ${
+                isSidebarCollapsed ? 'justify-center px-2' : 'space-x-3 px-4'
+              } py-3 rounded-xl text-xs font-medium transition-all cursor-pointer ${
                 activeTab === 'chat'
                   ? 'bg-sky-500/10 text-sky-400 border border-sky-500/20 shadow-sm'
                   : 'text-slate-400 hover:text-white hover:bg-white/5'
               }`}
             >
-              <MessageSquare className="w-4 h-4" />
-              <span>Grounded Chat</span>
+              <MessageSquare className="w-4 h-4 shrink-0" />
+              {!isSidebarCollapsed && <span className="truncate">Grounded Chat</span>}
             </button>
 
             <button
               onClick={() => setActiveTab('documents')}
-              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-xs font-medium transition-all ${
+              title={isSidebarCollapsed ? 'Document Knowledge' : undefined}
+              className={`w-full flex items-center ${
+                isSidebarCollapsed ? 'justify-center px-2' : 'space-x-3 px-4'
+              } py-3 rounded-xl text-xs font-medium transition-all cursor-pointer ${
                 activeTab === 'documents'
                   ? 'bg-sky-500/10 text-sky-400 border border-sky-500/20 shadow-sm'
                   : 'text-slate-400 hover:text-white hover:bg-white/5'
               }`}
             >
-              <FileText className="w-4 h-4" />
-              <span>Document Knowledge</span>
+              <FileText className="w-4 h-4 shrink-0" />
+              {!isSidebarCollapsed && <span className="truncate">Document Knowledge</span>}
             </button>
 
             <button
               onClick={() => setActiveTab('search')}
-              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-xs font-medium transition-all ${
+              title={isSidebarCollapsed ? 'Hybrid Search' : undefined}
+              className={`w-full flex items-center ${
+                isSidebarCollapsed ? 'justify-center px-2' : 'space-x-3 px-4'
+              } py-3 rounded-xl text-xs font-medium transition-all cursor-pointer ${
                 activeTab === 'search'
                   ? 'bg-sky-500/10 text-sky-400 border border-sky-500/20 shadow-sm'
                   : 'text-slate-400 hover:text-white hover:bg-white/5'
               }`}
             >
-              <Search className="w-4 h-4" />
-              <span>Hybrid Search</span>
+              <Search className="w-4 h-4 shrink-0" />
+              {!isSidebarCollapsed && <span className="truncate">Hybrid Search</span>}
             </button>
           </nav>
         </div>
 
         {/* System Footprint */}
-        <div className="p-4 m-4 rounded-xl bg-[#161c28]/40 border border-white/5 text-xs text-slate-400 space-y-2">
+        <div
+          className={`${
+            isSidebarCollapsed ? 'p-2 m-2 flex-col items-center gap-2' : 'p-3 m-3 space-y-2'
+          } rounded-xl bg-[#161c28]/40 border border-white/5 text-xs text-slate-400 transition-all`}
+        >
           <div className="flex items-center justify-between">
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              pgvector Engine
+            <span className="flex items-center gap-1.5" title="pgvector Engine: Online">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+              {!isSidebarCollapsed && <span>pgvector Engine</span>}
             </span>
-            <span className="text-emerald-400 font-mono text-[10px]">Online</span>
+            {!isSidebarCollapsed && <span className="text-emerald-400 font-mono text-[10px]">Online</span>}
           </div>
           <div className="flex items-center justify-between">
-            <span className="flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-indigo-400" />
-              Zero Hallucination
+            <span className="flex items-center gap-1.5" title="Zero Hallucination: Active">
+              <ShieldCheck className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+              {!isSidebarCollapsed && <span>Zero Hallucination</span>}
             </span>
-            <span className="text-indigo-400 font-mono text-[10px]">Active</span>
+            {!isSidebarCollapsed && <span className="text-indigo-400 font-mono text-[10px]">Active</span>}
           </div>
         </div>
       </aside>

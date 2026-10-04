@@ -17,7 +17,9 @@ import {
   Search,
   Plus,
   LogOut,
-  FolderOpen
+  FolderOpen,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { api } from '../services/api';
 
@@ -28,6 +30,7 @@ export default function Dashboard() {
   const [activeWorkspace, setActiveWorkspace] = useState<any>(null);
   const [documentsCount, setDocumentsCount] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   useEffect(() => {
     loadUserData();
@@ -71,65 +74,97 @@ export default function Dashboard() {
 
   return (
     <div className="flex h-screen bg-[#0e131f] text-[#dde2f3] overflow-hidden font-sans selection:bg-sky-500 selection:text-white">
-      {/* Sidebar */}
-      <aside className="w-72 bg-[#080e1a]/90 border-r border-white/5 flex flex-col justify-between backdrop-blur-xl">
+      {/* Collapsible / Non-Collapsible Sidebar */}
+      <aside
+        className={`${
+          isSidebarCollapsed ? 'w-20' : 'w-72'
+        } transition-all duration-300 ease-in-out bg-[#080e1a]/95 border-r border-white/5 flex flex-col justify-between backdrop-blur-xl relative z-30 shrink-0`}
+      >
         <div>
-          {/* Logo */}
-          <div className="p-6 border-b border-white/5 flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-sky-500/20">
-              <Sparkles className="w-5 h-5 text-white" />
+          {/* Logo & Toggle Header */}
+          <div className={`p-4 border-b border-white/5 flex items-center ${isSidebarCollapsed ? 'justify-center flex-col gap-3' : 'justify-between'}`}>
+            <div className="flex items-center space-x-3 overflow-hidden">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-sky-500/20 shrink-0">
+                <Sparkles className="w-5 h-5 text-white" />
+              </div>
+              {!isSidebarCollapsed && (
+                <div className="overflow-hidden">
+                  <h1 className="font-bold text-lg text-white tracking-tight leading-tight truncate">AskItAll</h1>
+                  <span className="text-[10px] font-mono text-sky-400 font-semibold tracking-wider uppercase block">
+                    Enterprise Hub
+                  </span>
+                </div>
+              )}
             </div>
-            <div>
-              <h1 className="font-bold text-lg text-white tracking-tight">AskItAll</h1>
-              <span className="text-[11px] font-mono text-sky-400 font-semibold tracking-wider uppercase">
-                Enterprise Hub
-              </span>
-            </div>
+
+            {/* Collapse / Expand Toggle Button */}
+            <button
+              onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
+              title={isSidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 border border-white/5 transition-colors cursor-pointer"
+            >
+              {isSidebarCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
+            </button>
           </div>
 
           {/* Navigation */}
-          <nav className="p-4 space-y-1.5">
+          <nav className="p-3 space-y-1.5">
             <Link
               to="/dashboard"
-              className="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-xs font-medium bg-sky-500/10 text-sky-400 border border-sky-500/20 shadow-sm"
+              title={isSidebarCollapsed ? 'Workspace Dashboard' : undefined}
+              className={`w-full flex items-center ${
+                isSidebarCollapsed ? 'justify-center px-2' : 'space-x-3 px-4'
+              } py-3 rounded-xl text-xs font-medium bg-sky-500/10 text-sky-400 border border-sky-500/20 shadow-sm transition-all`}
             >
-              <Layers className="w-4 h-4" />
-              <span>Workspace Dashboard</span>
+              <Layers className="w-4 h-4 shrink-0" />
+              {!isSidebarCollapsed && <span className="truncate">Workspace Dashboard</span>}
             </Link>
 
             <Link
               to="/workspace"
-              className="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-xs font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-all"
+              title={isSidebarCollapsed ? 'Grounded Chat' : undefined}
+              className={`w-full flex items-center ${
+                isSidebarCollapsed ? 'justify-center px-2' : 'space-x-3 px-4'
+              } py-3 rounded-xl text-xs font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-all`}
             >
-              <MessageSquare className="w-4 h-4" />
-              <span>Grounded Chat</span>
+              <MessageSquare className="w-4 h-4 shrink-0" />
+              {!isSidebarCollapsed && <span className="truncate">Grounded Chat</span>}
             </Link>
 
             <Link
               to="/workspace?tab=documents"
-              className="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-xs font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-all"
+              title={isSidebarCollapsed ? 'Knowledge Assets' : undefined}
+              className={`w-full flex items-center ${
+                isSidebarCollapsed ? 'justify-center px-2' : 'space-x-3 px-4'
+              } py-3 rounded-xl text-xs font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-all`}
             >
-              <FileText className="w-4 h-4" />
-              <span>Knowledge Assets</span>
+              <FileText className="w-4 h-4 shrink-0" />
+              {!isSidebarCollapsed && <span className="truncate">Knowledge Assets</span>}
             </Link>
           </nav>
         </div>
 
         {/* User Card & Logout */}
-        <div className="p-4 m-4 rounded-2xl bg-[#161c28]/60 border border-white/5 flex items-center justify-between">
+        <div
+          className={`${
+            isSidebarCollapsed ? 'p-2 m-2 flex-col gap-2' : 'p-3 m-3'
+          } rounded-2xl bg-[#161c28]/60 border border-white/5 flex items-center justify-between transition-all`}
+        >
           <div className="flex items-center gap-3 truncate">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-xs font-bold text-white shadow">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-xs font-bold text-white shadow shrink-0">
               {currentUser?.display_name ? currentUser.display_name.charAt(0) : 'U'}
             </div>
-            <div className="truncate">
-              <p className="text-xs font-semibold text-white truncate">{currentUser?.display_name || 'User'}</p>
-              <p className="text-[10px] font-mono text-slate-400 truncate">{currentUser?.email || ''}</p>
-            </div>
+            {!isSidebarCollapsed && (
+              <div className="truncate">
+                <p className="text-xs font-semibold text-white truncate">{currentUser?.display_name || 'User'}</p>
+                <p className="text-[10px] font-mono text-slate-400 truncate">{currentUser?.email || ''}</p>
+              </div>
+            )}
           </div>
           <button
             onClick={handleLogout}
             title="Log Out"
-            className="text-slate-400 hover:text-rose-400 p-1.5 rounded-lg hover:bg-white/5 transition-all"
+            className="text-slate-400 hover:text-rose-400 p-1.5 rounded-lg hover:bg-white/5 transition-all shrink-0 cursor-pointer"
           >
             <LogOut className="w-4 h-4" />
           </button>
