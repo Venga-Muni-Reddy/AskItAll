@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"error":"#ffb4ab","on-primary-fixed-variant":"#004c6e","surface-tint":"#89ceff","on-primary-fixed":"#001e2f","on-tertiary-fixed-variant":"#005236","inverse-primary":"#006591","surface-container":"#1a202c","on-primary-container":"#003751","outline":"#88929b","on-surface":"#dde2f3","on-tertiary-container":"#003b26","surface-variant":"#2f3542","surface":"#0e131f","error-container":"#93000a","on-surface-variant":"#bec8d2","surface-dim":"#0e131f","primary-container":"#0ea5e9","surface-container-low":"#161c28","surface-container-highest":"#2f3542","on-background":"#dde2f3","on-tertiary":"#003824","on-secondary":"#1000a9","tertiary-fixed-dim":"#4edea3","on-error-container":"#ffdad6","primary":"#89ceff","primary-fixed-dim":"#89ceff","tertiary":"#4edea3","on-secondary-fixed-variant":"#2f2ebe","secondary-fixed":"#e1e0ff","inverse-on-surface":"#2b303d","tertiary-container":"#00b17b","tertiary-fixed":"#6ffbbe","on-error":"#690005","surface-container-lowest":"#080e1a","secondary-fixed-dim":"#c0c1ff","secondary-container":"#3131c0","surface-container-high":"#242a36","secondary":"#c0c1ff","on-tertiary-fixed":"#002113","on-secondary-fixed":"#07006c","primary-fixed":"#c9e6ff","inverse-surface":"#dde2f3","background":"#0e131f","on-primary":"#00344d","outline-variant":"#3e4850","on-secondary-container":"#b0b2ff","surface-bright":"#343946"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin-desktop":"2.5rem","space-lg":"1.5rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","margin":"1.5rem","margin-mobile":"1rem","space-md":"1rem","gutter-mobile":"0.75rem","space-xl":"2.5rem","gutter":"1rem","space-sm":"0.5rem"},"fontFamily":{"headline-lg-mobile":["Inter"],"headline-xl-mobile":["Inter"],"headline-xl":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"label-md":["JetBrains Mono"],"label-lg":["JetBrains Mono"],"label-sm":["JetBrains Mono"],"body-sm":["Inter"]},"fontSize":{"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-xl-mobile":["30px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"-0.005em","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"500"}],"label-md":["11px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"label-lg":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.005em","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="flex flex-col flex-1 min-h-0"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest/80 backdrop-blur-xl"><img alt="Glowing dual-gemini spark geometric logo icon for AskItAll Enterprise Knowledge Intelligence with electric sky-blue and deep indigo gradient finish. Brand logo. - Primary color: #0ea5e9
+- Font: inter
+- Mode: dark
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V3p3RdR2raZysW5cdRLVEvPznzAlJ3QZxVB76rvBvWxG0109CuuKvt_O56eNEk3AQDgnElgC31-SJeC-ATMo73i6_K-ucJO6b6U9ZwsKeEvWX2QDrJfoXPw3o4xXkKC4Jaho8H-lZMlofJX4ScPASm_5wZUG1aqze6SEmd3D0bDGSXd0lmL8Ns16TjZkvgDkExF66OswnVDrU8Wbwut_Dm8HM5YOBiwCkqvzgDDvwQUuajHj6JCOJFRQNO"/><div class="flex flex-col leading-tight"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">AskItAll</span><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-medium tracking-wider">PRO</span></div><span class="font-label-sm text-label-sm tracking-widest text-on-surface-variant uppercase font-medium">ENTERPRISE</span></div></div><nav class="flex-1 px-space-sm py-space-md space-y-1 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-medium rounded-lg"><a aria-current="page" class="flex items-center justify-between px-space-md py-2.5 transition-all duration-150 bg-primary-container text-on-primary-container font-medium rounded-lg" data-path="workspace-dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span class="font-body-md text-body-md">Workspace Dashboard</span></div><span class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_8px_#0ea5e9]"></span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="grounded-chat" href="#"><span class="material-symbols-outlined text-[20px]">forum</span><span class="font-body-md text-body-md">Grounded Chat</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="knowledge-explorer" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">folder_data</span><span class="font-body-md text-body-md">Knowledge Explorer</span></div><span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">48</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="hybrid-search-and-trace" href="#"><span class="material-symbols-outlined text-[20px]">travel_explore</span><span class="font-body-md text-body-md">Hybrid Search & Trace</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="entity-knowledge-graph" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-body-md text-body-md">Entity Knowledge Graph</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="ingestion-pipelines" href="#"><span class="material-symbols-outlined text-[20px]">alt_route</span><span class="font-body-md text-body-md">Ingestion Pipelines</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="analytics-and-tokens" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-body-md text-body-md">Analytics & Tokens</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="settings-and-enclave" href="#"><span class="material-symbols-outlined text-[20px]">lock</span><span class="font-body-md text-body-md">Settings & Enclave</span></a></nav></div><div class="p-space-md bg-surface-container-low/60 mx-space-sm mb-space-md rounded-xl space-y-space-sm"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Storage Quota</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">7.4 GB / 20 GB</span></div><div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-primary-container rounded-full" style="width: 37%"></div></div><div class="pt-1 flex items-center justify-between"><div class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-tertiary-container/20 text-tertiary"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-sm text-label-sm font-medium">Zero-Hallucination: Enforced</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.3)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0"><div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-1.5 rounded-lg"><span class="material-symbols-outlined text-primary text-[18px]">domain</span><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Acme Global Corp / Primary Hub</span><span class="font-label-sm text-label-sm text-on-surface-variant">TENANT-ID: #ACME-894-PROD</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div><div class="hidden xl:flex items-center gap-1.5 bg-surface-container-low px-space-sm py-1.5 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="font-body-sm text-body-sm text-on-surface font-medium">Last 30 Days</span><span class="material-symbols-outlined text-[18px]">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-low"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-label-sm text-label-sm text-on-surface-variant font-mono">pgvector: Online</span><span class="font-label-sm text-label-sm text-tertiary font-mono font-medium">99.99%</span></div><div class="flex items-center gap-space-xs"><button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm font-medium" type="button"><span class="material-symbols-outlined text-[18px]">note_add</span><span>Connect Documents</span></button><button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary-container font-body-sm text-body-sm font-semibold hover:brightness-110 transition-all shadow-[0_0_12px_rgba(14,165,233,0.3)]" type="button"><span class="material-symbols-outlined text-[18px]">add_circle</span><span>New Knowledge Base</span></button></div><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Vybg7hTXnqywDSrC2MpVrvYc7b4sF4sdufGFibQs6nUM0Z4H_5c4FX9kCqwZXUOMyEyS3D7UOOudASGZ0KsMaMVS-_-8lbES3aAmIqSiEYYueSpif9Hk7041qVToSPvNO3fiQRUJBBDTL3ePzy82VQIsnOQxS74uOCtuAj0OLtOh-GozSLQEUkcFYaV6iRykCQSzNqfODkSRkwHh4Lt8Oh8DpYLwrP3ZQsVLVtWYvwKUg8x0-05Cx1sZ7c"/><div class="hidden md:flex flex-col text-left"><span class="font-body-sm text-body-sm text-on-surface font-medium leading-none">Analyst Enclave</span><span class="font-label-sm text-label-sm text-primary leading-none mt-1">Workspace Admin</span></div></div></div></div></header><main class="relative w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Ambient Glow Field (Contained) -->
+<div class="relative w-full overflow-hidden px-space-md lg:px-space-xl py-space-lg space-y-space-xl">
+<!-- Background Radiant Glow Orbs -->
+<div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-container/10 blur-[130px] rounded-full pointer-events-none -z-10"></div>
+<div class="absolute top-40 right-10 w-80 h-80 bg-secondary-container/15 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+<!-- Section: Executive Header Sub-Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md pb-space-xs">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant font-mono">WORKSPACE OVERVIEW</span>
+<span class="text-outline-variant font-mono">/</span>
+<span class="font-label-sm text-label-sm text-primary font-mono tracking-tight">Acme Global Corp / Primary Intelligence Hub</span>
+</div>
+<div class="flex items-center gap-space-md flex-wrap pt-0.5">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-semibold">
+            Executive Intelligence & Workspace Health
+          </h1>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-container/15 shadow-[0_0_12px_rgba(78,222,163,0.15)]">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-80"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-tertiary font-mono font-medium">Zero-Hallucination Guard: Active (100% Grounded)</span>
+</div>
+</div>
+</div>
+<!-- Action & Filter Bar -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low shadow-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline">calendar_today</span>
+<span class="font-label-md text-label-md text-on-surface font-mono">Last 30 Days</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors text-on-surface-variant hover:text-on-surface shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px] animate-spin-reverse text-primary">sync</span>
+<span class="font-label-sm text-label-sm font-mono">Synced 4s ago</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface transition-all font-body-sm text-body-sm font-medium shadow-sm" type="button">
+<span class="material-symbols-outlined text-[17px] text-primary">add_link</span>
+<span>Connect Documents</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary-container font-body-sm text-body-sm font-semibold hover:brightness-110 shadow-[0_0_16px_rgba(14,165,233,0.35)] transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">library_add</span>
+<span>New Knowledge Base</span>
+</button>
+</div>
+</div>
+<!-- Section 1: Executive KPI Metric Cards (4 Columns) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- KPI Card 1 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low/90 backdrop-blur-xl p-space-md shadow-md hover:bg-surface-container transition-all group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primary-container to-transparent"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-mono">Total Knowledge Assets</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">folder_copy</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl font-mono text-on-surface font-semibold tracking-tight">1,248</span>
+<span class="font-label-md text-label-md font-mono text-on-surface-variant">Documents</span>
+</div>
+<div class="mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary text-[16px]">trending_up</span>
+<span class="font-label-sm text-label-sm font-mono text-tertiary font-medium">+2.8%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">+34 ingested this week</span>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center gap-1.5 flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-mono">
+<span class="material-symbols-outlined text-[13px] text-error">picture_as_pdf</span> 820 PDFs
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-mono">
+<span class="material-symbols-outlined text-[13px] text-primary">description</span> 290 Word
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-mono">
+<span class="material-symbols-outlined text-[13px] text-tertiary">code</span> 138 MD
+          </span>
+</div>
+</div>
+<!-- KPI Card 2 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low/90 backdrop-blur-xl p-space-md shadow-md hover:bg-surface-container transition-all group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-tertiary via-tertiary-container to-transparent"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-mono">Indexed Semantic Vectors</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">scatter_plot</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl font-mono text-on-surface font-semibold tracking-tight">148,290</span>
+<span class="font-label-md text-label-md font-mono text-on-surface-variant">Chunks</span>
+</div>
+<!-- Mini SVG Sparkline -->
+<svg class="w-20 h-7 text-tertiary" fill="none" stroke="currentColor" viewbox="0 0 100 35">
+<path d="M0 30 Q 15 28, 30 22 T 60 14 T 85 10 T 100 3" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0 30 Q 15 28, 30 22 T 60 14 T 85 10 T 100 3 L 100 35 L 0 35 Z" fill="currentColor" fill-opacity="0.12"></path>
+</svg>
+</div>
+<div class="mt-1 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm font-mono text-tertiary">pgvector HNSW index healthy</span>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant">avg cosine sim: <strong class="text-on-surface">0.91</strong></span>
+<span class="font-label-sm text-label-sm font-mono text-primary bg-primary-container/10 px-1.5 py-0.5 rounded">1536-dim</span>
+</div>
+</div>
+<!-- KPI Card 3 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low/90 backdrop-blur-xl p-space-md shadow-md hover:bg-surface-container transition-all group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary-fixed via-secondary-container to-transparent"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-mono">Grounded Queries Answered</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl font-mono text-on-surface font-semibold tracking-tight">18,420</span>
+<span class="font-label-md text-label-md font-mono text-on-surface-variant">Questions</span>
+</div>
+<div class="mt-1 flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm font-mono text-tertiary">99.8% Groundedness Score</span>
+<span class="text-outline-variant font-mono">•</span>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant">0 Hallucinations</span>
+</div>
+<div class="mt-space-md pt-space-xs">
+<div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-tertiary-container/15 text-tertiary w-full justify-center">
+<span class="material-symbols-outlined text-[15px]">security</span>
+<span class="font-label-sm text-label-sm font-mono font-medium truncate">Zero-Hallucination Guardrail Active</span>
+</div>
+</div>
+</div>
+<!-- KPI Card 4 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low/90 backdrop-blur-xl p-space-md shadow-md hover:bg-surface-container transition-all group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-container via-surface-variant to-transparent"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-mono">AI Gateway & Token Usage</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">token</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl font-mono text-on-surface font-semibold tracking-tight">2.4M</span>
+<span class="font-label-md text-label-md font-mono text-on-surface-variant">Tokens / Month</span>
+</div>
+<div class="mt-1 flex items-center gap-2 font-mono font-label-sm text-label-sm text-on-surface-variant">
+<span>Avg Latency: <strong class="text-tertiary font-normal">420ms</strong></span>
+<span>|</span>
+<span>Est. Cost: <strong class="text-on-surface font-normal">$18.40</strong></span>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between gap-1 text-on-surface font-label-sm text-label-sm font-mono bg-surface-container-highest px-2 py-1 rounded">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="truncate">Gemini 1.5 Pro</span>
+<span class="text-primary font-medium">85%</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-surface-variant">GPT-4o</span>
+<span class="text-secondary font-medium">15%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Active Knowledge Bases Portfolio (3 Cards Grid) -->
+<div class="space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Active Knowledge Bases</h2>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-mono">(6 Total)</span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">search</span>
+<input class="bg-transparent text-on-surface placeholder:text-outline text-body-sm font-body-sm focus:outline-none w-44 md:w-56 font-mono" placeholder="Search knowledge clusters..." type="text"/>
+</div>
+<button class="flex items-center gap-1 font-label-md text-label-md text-primary hover:text-primary-fixed transition-colors font-mono" type="button">
+<span>View All (6)</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- KB Card 1 -->
+<div class="rounded-xl bg-surface-container-low/95 p-space-md shadow-md flex flex-col justify-between hover:bg-surface-container transition-all group">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-mono px-2 py-0.5 rounded bg-primary-container/15 text-primary">Primary Production</span>
+<span class="font-label-sm text-label-sm font-mono text-tertiary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Live
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">
+                Engineering & Architecture Specs
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+                Distributed systems blueprints, RFC documents, API contracts, and Terraform cloud topology.
+              </p>
+</div>
+<div class="grid grid-cols-3 gap-2 py-space-xs bg-surface-container-lowest/60 rounded-lg px-space-sm text-center font-mono">
+<div>
+<div class="font-label-sm text-label-sm text-outline">Documents</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">420</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline">Chunks</div>
+<div class="font-headline-sm text-headline-sm text-primary font-semibold">52.1k</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline">Members</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">18</div>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">history</span>
+<span class="truncate">Updated 12m ago (Kubernetes_Plan.pdf) by Alex W.</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-tertiary-container/10 text-tertiary font-label-sm text-label-sm font-mono">
+<span class="material-symbols-outlined text-[14px]">device_hub</span>
+<span>pgvector + Neo4j linked</span>
+</div>
+<button class="font-label-sm text-label-sm font-mono text-primary hover:text-primary-fixed flex items-center gap-0.5 transition-colors" type="button">
+<span>Inspect Embeddings</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- KB Card 2 -->
+<div class="rounded-xl bg-surface-container-low/95 p-space-md shadow-md flex flex-col justify-between hover:bg-surface-container transition-all group">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-mono px-2 py-0.5 rounded bg-secondary-container/25 text-secondary">Compliance & Legal</span>
+<span class="font-label-sm text-label-sm font-mono text-tertiary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Verified
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">
+                Corporate Policies & Remote Work
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+                HR compliance guidelines, global hardware provisioning regulations, SOC-2 requirements.
+              </p>
+</div>
+<div class="grid grid-cols-3 gap-2 py-space-xs bg-surface-container-lowest/60 rounded-lg px-space-sm text-center font-mono">
+<div>
+<div class="font-label-sm text-label-sm text-outline">Documents</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">180</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline">Chunks</div>
+<div class="font-headline-sm text-headline-sm text-secondary font-semibold">24.0k</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline">Members</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">84</div>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">history</span>
+<span class="truncate">Updated 2h ago (Global_Security_2026.pdf)</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-tertiary-container/10 text-tertiary font-label-sm text-label-sm font-mono">
+<span class="material-symbols-outlined text-[14px]">gavel</span>
+<span>Verified Evidence Ready</span>
+</div>
+<button class="font-label-sm text-label-sm font-mono text-primary hover:text-primary-fixed flex items-center gap-0.5 transition-colors" type="button">
+<span>Open Explorer</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- KB Card 3 -->
+<div class="rounded-xl bg-surface-container-low/95 p-space-md shadow-md flex flex-col justify-between hover:bg-surface-container transition-all group">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-mono px-2 py-0.5 rounded bg-surface-container-high text-on-surface">Strategy & R&D</span>
+<span class="font-label-sm text-label-sm font-mono text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span> Ingestion Active
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">
+                Product Requirements & Roadmaps
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+                H2 vision briefs, competitive intelligence teardowns, AI agents synthesis frameworks.
+              </p>
+</div>
+<div class="grid grid-cols-3 gap-2 py-space-xs bg-surface-container-lowest/60 rounded-lg px-space-sm text-center font-mono">
+<div>
+<div class="font-label-sm text-label-sm text-outline">Documents</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">310</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline">Chunks</div>
+<div class="font-headline-sm text-headline-sm text-primary font-semibold">38.2k</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline">Members</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">25</div>
+</div>
+</div>
+<!-- Active Ingestion Progress Bar inside Card -->
+<div class="space-y-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm font-mono">
+<span class="text-on-surface truncate">Syncing PRD_MultiModal_Sync.docx</span>
+<span class="text-primary font-semibold">78%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container rounded-full" style="width: 78%"></div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-mono">
+<span class="material-symbols-outlined text-[14px] text-primary animate-spin">refresh</span>
+<span>2 files in pipeline</span>
+</div>
+<button class="font-label-sm text-label-sm font-mono text-primary hover:text-primary-fixed flex items-center gap-0.5 transition-colors" type="button">
+<span>View Pipeline</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Dual-Column Operational Analytics (60/40 Split) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column (60% ~ 7 cols): Recent Grounded Query Intelligence Stream -->
+<div class="lg:col-span-7 rounded-xl bg-surface-container-low/90 backdrop-blur-xl p-space-md shadow-md space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+<span>Recent Grounded Query Intelligence Stream</span>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Telemetry trace for all executive queries with citation attribution & guardrail telemetry.
+            </p>
+</div>
+<!-- Filter Tabs -->
+<div class="flex items-center gap-1 p-1 bg-surface-container-lowest rounded-lg font-mono">
+<button class="px-2 py-1 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-medium" type="button">All (18.4k)</button>
+<button class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm" type="button">Grounded</button>
+<button class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm" type="button">Defensive</button>
+</div>
+</div>
+<!-- Query Stream Rows -->
+<div class="space-y-space-sm">
+<!-- Stream Row 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container/70 hover:bg-surface-container transition-colors flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">help</span>
+<span class="font-body-md text-body-md text-on-surface font-medium leading-tight">
+                  “What is our Q3 cloud cost reduction policy?”
+                </span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-mono font-label-sm text-label-sm shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+<span>Verified Grounded (100%)</span>
+</span>
+</div>
+<div class="flex items-center justify-between gap-2 flex-wrap font-mono text-label-sm font-label-sm text-on-surface-variant pl-6">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="inline-flex items-center gap-1 text-primary bg-surface-container-lowest px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[13px]">article</span> [2] Cloud_Governance.pdf p.18
+                </span>
+<span>Model: <strong class="text-on-surface font-medium">Gemini 1.5 Pro</strong></span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-outline">RTT: <strong class="text-tertiary font-mono">380ms</strong></span>
+<button class="text-primary hover:underline" type="button">View Trace</button>
+</div>
+</div>
+</div>
+<!-- Stream Row 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container/70 hover:bg-surface-container transition-colors flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">help</span>
+<span class="font-body-md text-body-md text-on-surface font-medium leading-tight">
+                  “Explain the SSO SAML token exchange protocol”
+                </span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-mono font-label-sm text-label-sm shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+<span>Verified Grounded (98%)</span>
+</span>
+</div>
+<div class="flex items-center justify-between gap-2 flex-wrap font-mono text-label-sm font-label-sm text-on-surface-variant pl-6">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="inline-flex items-center gap-1 text-primary bg-surface-container-lowest px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[13px]">article</span> [3] Auth_Architecture.docx p.7
+                </span>
+<span>Model: <strong class="text-on-surface font-medium">Gemini 1.5 Pro</strong></span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-outline">RTT: <strong class="text-tertiary font-mono">410ms</strong></span>
+<button class="text-primary hover:underline" type="button">View Trace</button>
+</div>
+</div>
+</div>
+<!-- Stream Row 3: Defensive No-Answer -->
+<div class="p-space-sm rounded-lg bg-surface-container/70 hover:bg-surface-container transition-colors flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">shield</span>
+<span class="font-body-md text-body-md text-on-surface font-medium leading-tight">
+                  “What are the unreleased Q4 revenue targets?”
+                </span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container/30 text-secondary font-mono font-label-sm text-label-sm shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+<span>Defensive No-Answer</span>
+</span>
+</div>
+<div class="flex items-center justify-between gap-2 flex-wrap font-mono text-label-sm font-label-sm text-on-surface-variant pl-6">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="inline-flex items-center gap-1 text-secondary bg-surface-container-lowest px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[13px]">block</span> Insufficient evidence in corpus
+                </span>
+<span class="text-on-surface-variant">Guardrail blocked speculative hallucination</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-outline">RTT: <strong class="text-tertiary font-mono">190ms</strong></span>
+<button class="text-secondary hover:underline" type="button">Guardrail Audit</button>
+</div>
+</div>
+</div>
+<!-- Stream Row 4 -->
+<div class="p-space-sm rounded-lg bg-surface-container/70 hover:bg-surface-container transition-colors flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">help</span>
+<span class="font-body-md text-body-md text-on-surface font-medium leading-tight">
+                  “Detail remote hardware encryption standards”
+                </span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-mono font-label-sm text-label-sm shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+<span>Verified Grounded (100%)</span>
+</span>
+</div>
+<div class="flex items-center justify-between gap-2 flex-wrap font-mono text-label-sm font-label-sm text-on-surface-variant pl-6">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="inline-flex items-center gap-1 text-primary bg-surface-container-lowest px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[13px]">article</span> [1] Remote_Work_2026.pdf p.14
+                </span>
+<span>Model: <strong class="text-on-surface font-medium">Gemini 1.5 Pro</strong></span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-outline">RTT: <strong class="text-tertiary font-mono">320ms</strong></span>
+<button class="text-primary hover:underline" type="button">View Trace</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Telemetry Stream Footer -->
+<div class="flex items-center justify-between pt-space-xs font-mono font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span>Live query telemetry streaming (SSE connected)</span>
+</div>
+<span class="text-outline">Showing 4 of 18,420 queries</span>
+</div>
+</div>
+<!-- Right Column (40% ~ 5 cols): Live Ingestion Pipeline Queue -->
+<div class="lg:col-span-5 rounded-xl bg-surface-container-low/90 backdrop-blur-xl p-space-md shadow-md space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">alt_route</span>
+<span>Live Ingestion Pipeline</span>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Celery distributed parsing & vectorization workers</p>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-lowest font-mono font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="text-tertiary">3 Idle</span>
+<span class="text-outline-variant">/</span>
+<span class="text-primary">1 Active</span>
+</div>
+</div>
+<!-- Active Worker Card with 5-stage stepper -->
+<div class="p-space-md rounded-xl bg-surface-container/90 space-y-space-sm shadow-inner">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+</div>
+<div class="min-w-0">
+<div class="font-body-md text-body-md font-semibold text-on-surface truncate">Security_Audit_Report_2026.pdf</div>
+<div class="font-label-sm text-label-sm font-mono text-outline">14.2 MB • Worker: worker-eu-west-04</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary font-mono font-label-sm text-label-sm">
+              18.4 MB/s
+            </span>
+</div>
+<!-- 5-Stage Visual Stepper -->
+<div class="pt-space-xs space-y-2 font-mono">
+<div class="flex items-center gap-2 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-tertiary text-[16px]">check_circle</span>
+<span class="text-on-surface">1. File Security & Malware Scan</span>
+<span class="text-tertiary ml-auto">Passed</span>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-tertiary text-[16px]">check_circle</span>
+<span class="text-on-surface">2. Deterministic OCR & Table Parse</span>
+<span class="text-tertiary ml-auto">94 pgs</span>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-tertiary text-[16px]">check_circle</span>
+<span class="text-on-surface">3. Semantic Chunking Strategy</span>
+<span class="text-tertiary ml-auto">142 chunks</span>
+</div>
+<!-- Stage 4: Active Glowing Vectorization -->
+<div class="space-y-1 pt-0.5">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="flex items-center gap-2 text-primary font-medium">
+<span class="material-symbols-outlined text-primary text-[16px] animate-spin">autorenew</span>
+<span>4. Embedding Gen (text-embedding-3)</span>
+</span>
+<span class="text-primary font-bold">74%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full shadow-[0_0_10px_#0ea5e9]" style="width: 74%"></div>
+</div>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-outline pt-0.5">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span>
+<span>5. Neo4j Knowledge Graph Entity Sync</span>
+<span class="ml-auto">Pending</span>
+</div>
+</div>
+</div>
+<!-- Next in Queue List -->
+<div class="space-y-2">
+<div class="font-label-sm text-label-sm font-mono text-outline uppercase tracking-wider">Up Next in Ingestion Queue</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container/40 font-mono text-label-sm font-label-sm">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-tertiary text-[16px]">table_chart</span>
+<span class="text-on-surface truncate">Q2_Financial_Consolidated.xlsx</span>
+<span class="text-outline">(4.8 MB)</span>
+</div>
+<span class="text-on-surface-variant shrink-0">Queued #1 • ~14s</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container/40 font-mono text-label-sm font-label-sm">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-primary text-[16px]">code</span>
+<span class="text-on-surface truncate">Engineering_RFC_771.md</span>
+<span class="text-outline">(180 KB)</span>
+</div>
+<span class="text-on-surface-variant shrink-0">Queued #2 • ~22s</span>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-body-sm text-body-sm font-medium transition-colors flex items-center justify-center gap-1.5 shadow-sm" type="button">
+<span>View All Ingestion Pipelines</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Section 4: Enterprise Infrastructure & Graph Health Strip (Bottom 4-Widget Grid) -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">dns</span>
+<span>Enterprise Infrastructure & Graph Health</span>
+</h3>
+<span class="font-label-sm text-label-sm font-mono text-tertiary">All 4 Subsystems Operational</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Infra Widget 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low/90 backdrop-blur-xl shadow-md space-y-2">
+<div class="flex items-center justify-between font-mono">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> PostgreSQL + pgvector
+            </span>
+<span class="font-label-sm text-label-sm text-tertiary">99.99%</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant font-mono">
+            Storage: 4.8 GB / Mem: 62% healthy
+          </div>
+<div class="pt-1 flex items-center justify-between font-mono font-label-sm text-label-sm text-outline">
+<span>0 Slow Queries</span>
+<span class="text-primary">v16.2 / HNSW</span>
+</div>
+</div>
+<!-- Infra Widget 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low/90 backdrop-blur-xl shadow-md space-y-2">
+<div class="flex items-center justify-between font-mono">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Neo4j Enterprise Graph
+            </span>
+<span class="font-label-sm text-label-sm text-tertiary">RTT: 4ms</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant font-mono">
+            12,400 Entity Nodes • 38.1k Relations
+          </div>
+<div class="pt-1 flex items-center justify-between font-mono font-label-sm text-label-sm text-outline">
+<span>Cypher Inferences Sync</span>
+<span class="text-tertiary">Active</span>
+</div>
+</div>
+<!-- Infra Widget 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low/90 backdrop-blur-xl shadow-md space-y-2">
+<div class="flex items-center justify-between font-mono">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Redis Task Broker
+            </span>
+<span class="font-label-sm text-label-sm text-tertiary">1.2ms</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant font-mono">
+            Queue Latency: 1.2ms • 0 Dead Letters
+          </div>
+<div class="pt-1 flex items-center justify-between font-mono font-label-sm text-label-sm text-outline">
+<span>4 Nodes Cluster</span>
+<span class="text-primary">Celery Active</span>
+</div>
+</div>
+<!-- Infra Widget 4 -->
+<div class="p-space-md rounded-xl bg-surface-container-low/90 backdrop-blur-xl shadow-md space-y-2">
+<div class="flex items-center justify-between font-mono">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">lock</span> Privacy & Enclave
+            </span>
+<span class="font-label-sm text-label-sm text-secondary">SOC-2 Type II</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant font-mono">
+            AES-256 Storage • Zero AI Training
+          </div>
+<div class="pt-1 flex items-center justify-between font-mono font-label-sm text-label-sm text-outline">
+<span>Cryptographic Proof</span>
+<span class="text-tertiary">Compliant</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

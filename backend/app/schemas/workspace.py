@@ -1,7 +1,7 @@
 import uuid
 from datetime import datetime
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, EmailStr, Field
 
 
 class WorkspaceCreate(BaseModel):
@@ -22,18 +22,28 @@ class WorkspaceResponse(BaseModel):
     slug: str
     description: Optional[str] = None
     status: str
+    user_role: Optional[str] = None
     created_at: datetime
 
     class Config:
         from_attributes = True
 
 
-class WorkspaceMemberResponse(BaseModel):
-    id: uuid.UUID
+class WorkspaceMemberAdd(BaseModel):
+    email: Optional[EmailStr] = None
+    user_id: Optional[uuid.UUID] = None
+    role: str = Field("member", pattern="^(admin|member|viewer)$")
+
+
+class WorkspaceMemberUpdate(BaseModel):
+    role: str = Field(..., pattern="^(admin|member|viewer)$")
+
+
+class WorkspaceMemberWithUser(BaseModel):
+    membership_id: uuid.UUID
     workspace_id: uuid.UUID
     user_id: uuid.UUID
+    email: str
+    display_name: str
     role: str
-    created_at: datetime
-
-    class Config:
-        from_attributes = True
+    joined_at: datetime
