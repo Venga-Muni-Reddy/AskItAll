@@ -49,6 +49,8 @@ class Settings(BaseSettings):
     @classmethod
     def assemble_sync_db_connection(cls, v: Optional[str], info) -> str:
         if isinstance(v, str) and v:
+            if v.startswith("postgresql://"):
+                return v.replace("postgresql://", "postgresql+psycopg2://", 1)
             return v
         data = info.data
         user = data.get("POSTGRES_USER", "askitall")
@@ -56,7 +58,7 @@ class Settings(BaseSettings):
         host = data.get("POSTGRES_HOST", "postgres")
         port = data.get("POSTGRES_PORT", 5432)
         db = data.get("POSTGRES_DB", "askitall_db")
-        return f"postgresql://{user}:{pwd}@{host}:{port}/{db}"
+        return f"postgresql+psycopg2://{user}:{pwd}@{host}:{port}/{db}"
 
     # Redis & Celery
     REDIS_HOST: str = "redis"

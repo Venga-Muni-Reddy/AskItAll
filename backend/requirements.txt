@@ -1,12 +1,14 @@
 # FastAPI & Server
 fastapi>=0.111.0
 uvicorn[standard]>=0.30.0
-pydantic>=2.7.0
+pydantic[email]>=2.7.0
 pydantic-settings>=2.3.0
+email-validator>=2.0.0
 python-multipart>=0.0.9
 
 # Database & ORM
-sqlalchemy>=2.0.30
+sqlalchemy[asyncio]>=2.0.30
+greenlet>=3.0.3
 asyncpg>=0.29.0
 psycopg2-binary>=2.9.9
 pgvector>=0.3.0
